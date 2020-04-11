@@ -1,12 +1,14 @@
 from random import seed
 from random import randint
-import satInstances as data
+import satInstances as satdata
 
 
 satVariableLength=75
 individual=[]
 population=[]
-
+data=[]
+fitnessValues=[]
+fitness=0
 
 def generatPpopulation(numberOfIndividuals):
     global individual
@@ -20,8 +22,22 @@ def generatPpopulation(numberOfIndividuals):
     return population    
 
 
-def firstPopulation(numberOfIndividuals):
-    return generatPpopulation(numberOfIndividuals)
+def fitnessFirstPopulation(numberOfIndividuals):
+    global data
+    global fitnessValues
+    global population
+    global fitness
+    generatPpopulation(numberOfIndividuals)
+    data=satdata.returnInstances()
+    print(len(data[0]))
+    for i in population:
 
-firstPopulation(10)
-print(len(population))
+        for y in data[0]:
+            for x in range(3):
+                if data[0][y][x] in population[i]:
+                    fitnessValues.append([i,fitness+1])
+    
+
+    
+fitnessFirstPopulation(5)
+print(fitnessValues)
