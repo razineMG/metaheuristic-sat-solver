@@ -17,16 +17,19 @@ for i in range(sizeOfInstances) :
              fileEndingBool=False
          if x[0] != "c" and x[0] !="p" and x[0] !="%" and x[0] !="0" :
              y=x.replace('0\n','').replace("\n","")
-             c=y.split(" ")
-             if c[0] == '' :
-                 c.pop(0)
-             c.pop(3)
-             instance.append(list(map(int,c)))
+             clause=y.split(" ")
+             if clause[0] == '' :
+                 clause.pop(0)
+             clause.pop(3)
+             instance.append(list(map(int,clause)))
              lineCounter+=1
-    filePath+=1         
+    filePath+=1
+    instances.append(instance)
+    instance=[]         
      
- 
+print(len(instances))
+print(instances[77])
 print(lineCounter)
-print(instance)  
+  
 
     
