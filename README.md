@@ -1,1 +1,1 @@
-# metaheuristic-sat-solver
+# metaheuristic-3sat-solver
