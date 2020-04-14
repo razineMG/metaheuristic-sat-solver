@@ -1,6 +1,6 @@
 import satInstances as data
-import geniticAlgos as genitic
+import geniticAlgo as genitic
 
 
 print(len(data.returnInstances()))
-print(len(genitic.generatPpopulation(8)))
+genitic.geniticAlgo(200,1000,2,50)

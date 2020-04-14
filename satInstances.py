@@ -2,16 +2,16 @@
 instances=[]
 instance=[]
 sizeOfInstances=100
-filePath=1
+
 
      
 def returnInstances():
-    global filePath
+    
     global instance
     global instances
     for i in range(sizeOfInstances) :
     
-        satFile=open("UF75.325.100/uf75-0"+str(filePath)+".cnf")
+        satFile=open("UF75.325.100/uf75-0"+str(i+1)+".cnf")
         lineCounter=0
         fileEndingBool=True
         while fileEndingBool:
@@ -28,7 +28,7 @@ def returnInstances():
                  clause.pop(3)
                  instance.append(list(map(int,clause)))
                  lineCounter+=1
-        filePath+=1
+        
         instances.append(instance)
         instance=[]         
     return instances
